@@ -1,0 +1,80 @@
+/*
+
+app-template.css overrides
+
+remove this comment if used
+remove this file if not
+
+*/
+.login{
+    background: #fff;
+    margin: 50px 0 40px 0;
+    position: relative;
+    padding:20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+.login form{
+    background: #fff;
+}
+.login input{
+    width: 120px;
+}
+.enter_button {
+    color: #24292e;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #f5f5f5 0%, #d6d6d6 90%);
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 2px 7px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    border-radius: 0.25em;
+}
+
+#before-load {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff9;
+    z-index: 1001;
+}
+
+.preload_img {
+    display:block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -128px 0px 0px -128px;
+}
+#info{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff9;
+    z-index: 1001;
+    display:none;
+}
+
+.info_content{
+    display:block;
+    width:300px;
+    text-align:center;
+    padding:50px 20px;
+    background: #fff;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0.25em;
+    color:black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0px 0px -140px;
+}

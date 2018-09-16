@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<!-- CSS overrides - remove if you don't need it -->
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+	<body>
+		<div id="before-load">
+			<img class="preload_img" src="/images/preloader.gif" alt="">
+		</div>
+		<div id="info" onclick="fadeInfo();">
+			<div class="info_content">123</div>
+		</div>
+		<section class="login">
+		</section>
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" onchange="addItem(this)" placeholder="What needs to be done?" autofocus>
+			</header>
+			<!-- This section should be hidden by default and shown when there are todos -->
+			<section class="main">
+				<input id="toggle-all" class="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+				</ul>
+			</section>
+			<!-- This footer should hidden by default and shown when there are todos -->
+			<footer class="footer">
+				<!-- This should be `0 items left` by default -->
+				<span class="todo-count"><strong>0</strong> item left</span>
+				<!-- Remove this if you don't implement routing -->
+				<ul class="filters">
+					<li>
+						<a class="selected"  id="all" href="#" onclick="filter('all',this);">All</a>
+					</li>
+					<li>
+						<a href="#" id="active" onclick="filter('active',this);">Active</a>
+					</li>
+					<li>
+						<a href="#" id="completed"  onclick="filter('completed',this);">Completed</a>
+					</li>
+				</ul>
+				<!-- Hidden if no completed items are left ↓ -->
+				<button class="clear-completed" onclick="deleteCompleted()">Clear completed</button>
+			</footer>
+		</section>
+		<script type="html/tpl" id="todo-template">
+			<li class="{completed}" data-id="{id}" ondblclick="startEditing(this)">
+			<div class="view">
+				<input class="toggle" type="checkbox" {checked} onclick="cancelItem({id},this)">
+				<label>{title}</label>
+				<button class="destroy" onclick="removeItem({id})"></button>
+			</div>
+			<input class="edit" value="{title}">
+			</li>
+		</script>
+		<script type="html/tpl" id="login-template">
+            <form>
+            	<label>Email <input id="login" type="text"></label>
+                <label>Password <input id="pass" type="password"></label>
+                <button class="enter_button" onclick="auth(); return false;">Enter</button>
+                <button class="enter_button" onclick="register(); return false;">Register</button>
+             </form>
+		</script>
+		<script type="html/tpl" id="logout-template">
+			You login as : {email}  <button class="enter_button" onclick="logout()">Logout</button>
+		</script>
+		<!-- Scripts here. Don't remove ↓ -->
+		<script
+				src="https://code.jquery.com/jquery-3.3.1.min.js"
+				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				crossorigin="anonymous"></script>
+		<script src="node_modules/todomvc-common/base.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
